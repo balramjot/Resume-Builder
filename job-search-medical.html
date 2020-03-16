@@ -1,0 +1,82 @@
+<!doctype html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Term Project - Resume Builder</title>
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/angular.js"></script>
+    <script src="js/main_controller.js"></script>
+    <script src="js/jobSearchmedical.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+</head>
+<body ng-controller="ResumeControler" ng-init=getJobs()>
+<div class="wrapper">
+    <div class="main_div">
+        <header>
+            <a href="./" style="color:#000;"><h1>Resume Builder</h1></a>
+            <ul>
+                <a href="job-search"><li class="ui-corner-all">Technical Jobs</li></a>
+                <a href="job-search-medical"><li class="ui-corner-all">Medical Jobs</li></a>
+            </ul>
+                <div class="clear"></div>
+        </header>
+        <center class="center_Style1">Search The Job You Are Looking For !!!</center>
+            <div class="clear"></div>
+        <center class="center_Style">( Try to use medical keywords in search field )</center>
+            <div class="clear"></div>
+        <div class="main">
+            <div class="sub_div">
+                    <div class="wid_100">
+                        <div class="wid_100">
+                            <div class="wid_100_mar_20">
+                                <div class="col-md-9" style="float:left;padding:0px;">
+                                    <input id="search" ng-model="search" type="text" placeholder="Enter your keyword" class="input_field_1" style="float:right;">
+                                </div>
+                                <div class="col-md-3" style="float:right;padding:0px;">
+                                    <button type="button" id="getJobs" ng-click="getJobs()" class="btn btn-primary">Search</button>
+                                </div>
+                                    <div class="clear"></div>
+                            </div>
+                                <div class="clear"></div>
+                         </div>
+                            <div class="clear ht_30"></div>
+                            <div class="ht_30"></div>
+                                <center id="loader" style="display:none;"><img src="assets/gif-transparent-loading-4.gif" style="height:230px;width:230px;"></center>
+                                <center id="sketcher" style="display:none;font-size:20px;color:red;">Nothing Found ! Please try some another keywords !!!</center>
+                        <div class="col-md-10" style="margin:auto;">
+                                <div style="text-align:right"><span style="color:red;font-size:15px;">{{total}}</span></div>
+                        	<div class="div_Colr" ng-repeat="item in items">
+                        		<div class="wid_100" style="padding: 15px;">
+                        			<div class="wid_100">
+	                        			<div class="sb_div1"><i class="fa fa-pencil"></i></div>
+	                        			<div class="sb_div2"><b style="font-size:20px">{{item.position_title}}</b></div>
+                        					<div class="clear"></div>
+                        			</div>
+                        				<div class="clear ht_10"></div>
+                        			<div class="wid_100">
+	                        			<div class="sb_div1">&nbsp;</div>
+	                        			<div class="sb_div5"><i class="fa fa-building"></i>&nbsp;&nbsp;<span style="font-size:13px;">{{item.organization_name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-location-arrow"></i>&nbsp;&nbsp;<span style="font-size:13px;">{{item.locations[0]}}</span><br/><i class="fa fa-calendar"></i>&nbsp;&nbsp;<b>Posted On :</b>&nbsp;&nbsp;<span style="font-size:13px;">{{item.start_date}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar"></i>&nbsp;&nbsp;<b>Last Date :</b>&nbsp;&nbsp;<span style="font-size:13px;">{{item.end_date}}</span></div>
+	                        			<div class="ft_rt"><a href="{{item.url}}" target="_blank" class="a_tag1" style="text-decoration: none;color:#fff;"><i class="fa fa-bookmark"></i>&nbsp;&nbsp;Apply</a></div>
+                        					<div class="clear"></div>
+                        			</div>
+                        				<div class="clear ht_10"></div>
+                        		</div>
+                        	</div>
+                        		<div class="clear ht_20"></div>
+                         </div>
+                            <div class="clear"></div>
+                    </div> 
+            </div>
+                <div class="clear"></div>
+        </div>
+            <div class="clear"></div>
+    </div>
+         <div class="clear"></div>
+</div>
+     <div class="clear"></div>
+        <footer>
+            <h5>Boston University</h5>
+        </footer>
+</body>
+</html>

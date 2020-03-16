@@ -1,0 +1,574 @@
+html {
+    position: relative;
+    margin: 0 auto;
+}
+
+body {
+    margin: 0 auto;
+    background-image: url("../assets/wallpaper_800x600_1023.jpg");
+}
+
+.wrapper {
+    position: relative;
+    width: 1360px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.main_div {
+    width:100%;
+}
+
+.main {
+    position: relative;
+    width:95%;
+    margin:auto;
+    background: #eaecf2;
+    border:2px solid #C3C3C3;
+    border-radius:5px;
+}
+
+#mainContent {
+}
+
+.control {
+    display: inline;
+
+}
+
+.chances ul {
+    width: 800px;
+    padding: 0;
+
+}
+
+.chances ul li {
+    background-color: orange;
+    text-align: center;
+    display: inline;
+    width: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    list-style: none;
+    clear: both;
+    font-size: 25pt;
+    border: 1px solid white;
+}
+
+.blocks-button {
+    display: block;
+
+}
+
+.blocks-button button {
+    width: 150px;
+    heigh: 150px;
+    margin-right: 10px;
+}
+
+.blocks {
+    display: inline-block;
+
+}
+
+.blocks div {
+    width: 150px;
+    heigh: 150px;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 20pt;
+    text-align: center;
+    float: left;
+}
+
+#accordion {
+    position: relative;
+}
+
+#code {
+    margin-top: 70px;
+}
+
+#code h1 {
+    font-size: 25pt;
+    text-align: center;
+}
+
+#again {
+    margin-bottom: 20px;
+}
+
+#prize, .fun {
+    display: block;
+    text-align: center;
+    font-size: 25pt;
+    border: 5px dashed gray;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+
+#prize input {
+    height: 50px;
+    width: 500px;
+    font-size: 25pt;
+    text-align: center;
+}
+
+#prize button, #play, #playHow {
+    margin-top: 25px;
+    height: 50px;
+    width: 200px;
+    font-size: 25pt;
+    text-align: center;
+    cursor: pointer;
+}
+
+#gameWord div {
+    display: block;
+    text-align: center;
+    position: relative;
+    float: left;
+    left: 5%;
+}
+
+.wrapper-words {
+    margin: 0 auto;
+    width: auto;
+}
+
+#dragTarget {
+    /*margin-top: 10px;*/
+    width: 95%;
+    height: 150px;
+    margin: 0 auto;
+
+    padding: 0;
+
+}
+
+#dragTarget ul {
+    display: inline;
+    float: left;
+    width: auto;
+    position: static;
+
+}
+
+#dragTarget ul li {
+    margin-top: 25px;
+    padding-bottom: 10px;
+    display: inline;
+    border: 1px solid white;
+    width: 95px;
+    height: 75px;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 45pt;
+    margin-right: 15px;
+    cursor: pointer;
+
+}
+
+#dragWord {
+
+    position: relative;
+    left: 5%;
+    float: left;
+    width: 1000px;
+    cursor: pointer;
+
+}
+
+#dragWord div {
+    display: inline;
+    float: left;
+    position: relative;
+    left: 43%
+
+}
+
+.tiles {
+    color: white;
+    font-size: 35pt;
+    text-transform: capitalize;
+    margin-right: 20px;
+    text-align: center;
+    float: left;
+    position: relative;
+
+}
+
+.tiles:hover {
+    color: orangered;
+}
+
+.secret-code {
+    font-size: 35pt;
+    color: red;
+}
+
+.fun, .about, .how {
+    display: none;
+}
+
+.about, .how {
+    height: 500px;
+    text-align: left;
+    border: 5px dashed gray;
+    font-size: 18pt;
+}
+
+hr {
+    width: 960px;
+    text-align: center;
+    border: 2.5px dashed orange;
+}
+
+#play, #playHow {
+    margin-left: 70px;
+
+}
+
+.about h3, .how h3 {
+    margin-left: 67px;
+    border-bottom: 2.5px dashed orange;
+    width: 215px;
+}
+
+.about p, .how p {
+    padding-left: 70px;
+    padding-right: 70px;
+    text-align: justify;
+}
+
+.how ol {
+    padding-left: 100px;
+}
+
+.how ol li {
+    color: orangered;
+}
+
+header {
+    display: block;
+    border-bottom: 2px solid orange;
+    background: #f8f7c5;
+}
+
+header h1 {
+    width: 660px;
+    float: left;
+    padding-left: 15px;
+    height: 58px;
+    text-align:left;
+    margin: 0;
+}
+
+header ul {
+    float: right;
+    margin-right: 30px;
+}
+
+header ul li {
+    display: table-column;
+    float: left;
+    padding-top: 9px;
+    font-size: 16pt;
+    padding-right: 60px;
+    border: 1px solid black;
+    text-align: center;
+    padding-bottom: 15px;
+    padding-left: 54px;
+    list-style: none;
+    margin-right: 25px;
+}
+
+.active {
+    background: royalblue;
+    color: whitesmoke;
+    border: 1px solid royalblue;
+}
+
+header ul li:hover {
+    background: dimgrey;
+    color: white;
+}
+
+footer {
+    position: relative;
+    border-top: 2px solid orange;
+    background: #f8f7c5;
+    color: #000;
+    height: 55px;
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+    bottom: 0;
+
+}
+
+footer h5 {
+    padding-top: 23px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    width: 20%;
+    float: left;
+    margin: 0;
+}
+
+footer #tune {
+    float: right;
+    margin: 0;
+    padding-top: 16px;
+    margin-right: 5px;
+}
+
+footer #tune audio {
+    background: darkgray;
+}
+
+footer #tune label {
+    background: black;
+    color: white;
+    margin-right: 10px;
+    float: right;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+
+.yellow, .magenta, .cyan, .rose, .violet, .azure, .spring, .chartreuse {
+    border: none;
+    width: 175px;
+    heigh: 350px;
+    font-size: 20pt;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#check, #cHint, #clearInput {
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+}
+
+.red {
+    background-color: red;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+}
+
+.green {
+    background-color: green;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+}
+
+.blue {
+    background-color: blue;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.magenta {
+    background-color: magenta;
+}
+
+.cyan {
+    background-color: cyan;
+}
+
+.rose {
+    background-color: #ff007f;
+}
+
+.violet {
+    background-color: violet;
+}
+
+.azure {
+    background-color: #007fff;
+}
+
+.spring {
+    background-color: springgreen;
+}
+
+.chartreuse {
+    background-color: chartreuse;
+}
+
+.clear {
+    clear: both;
+}
+
+.center_Style {
+    font-size: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+}
+
+.center_Style1
+{
+    padding-top: 20px;
+    font-size: 25px;
+    color: #fff;
+    padding-bottom: 20px;
+}
+.sub_div {
+    width: 95%;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.wid_100 {
+    width: 100%;
+}
+
+.info_head {
+    font-size: 18px;
+    border-bottom: 2px solid orange;
+}
+
+.div_left {
+    width:45%;
+    float:left;
+}
+
+.div_right {
+    width:45%;
+    float:right;
+}
+
+.input_field {
+    width: 70%;
+    height:30px;
+    float:right;
+}
+
+.wid_100_mar_10 {
+    width:100%;
+    margin-top:10px;
+}
+
+.wid_100_mar_20 {
+    width:100%;
+    margin-top:20px;
+}
+
+.ht_30 {
+    height:30px;
+}
+
+.div_left_1 {
+    width:25%;
+    float:left;
+    margin-left:30px;
+}
+
+.div_right_1 {
+    width:25%;
+    float:right;
+}
+
+.div_left_2 {
+    width:35%;
+    float:left;
+}
+
+.div_left_3 {
+    width:35%;
+    float:left;
+    margin-left:30px;
+}
+
+.div_right_2 {
+    width:20%;
+    float:right;
+}
+.input_field_1
+{
+    width:80%;padding:10px;height:37px;
+}
+.div_Colr
+{
+    width: 100%;
+    background: #f8f7c5;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+    margin-bottom:20px;
+}
+.sb_div1
+{
+    float: left;width: 3%;
+}
+.sb_div2
+{
+    width: 70%;float: left;
+}
+.sb_div3
+{
+    float: right;width: 25%;text-align: right;
+}
+.sb_div4
+{
+    width: 96%;float: left;
+}
+.sb_div5
+{
+    width: 80%;float: left;
+}
+.ft_rt
+{
+    float: right;
+}
+.ht_10
+{
+    height:10px;
+}
+.a_tag
+{
+background: #36b8c2;
+color: #fff;
+padding: 5px;
+border-radius: 5px;
+font-size: 13px;
+text-decoration: none;
+}
+.a_tag1
+{
+text-decoration: none;
+color: #fff;
+background: green;
+padding: 10px;
+font-weight: bold;
+border-radius: 10px;
+}
+.ht_20
+{
+    height:20px;
+}
+.img_cls
+{
+    width:100%;
+    max-width:100%;
+    border-radius: 10px;
+    border:3px solid #000;
+}
+.div_01
+{
+    margin:auto;background:white;padding-top:15px;padding-bottom:15px;
+}
+.pointer
+{
+    cursor: pointer !important;
+}

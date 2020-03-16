@@ -1,0 +1,287 @@
+<!doctype html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Term Project - Resume Builder</title>
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/angular.js"></script>
+    <script src="js/main_controller.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body ng-controller="ResumeControler" ng-init=retrieveData()>
+<div class="wrapper">
+    <div class="main_div">
+        <header>
+             <a href="./" style="color:#000;"><h1>Resume Builder</h1></a>
+            <ul>
+                <a href="job-search"><li class="ui-corner-all">Technical Jobs</li></a>
+                <a href="job-search-medical"><li class="ui-corner-all">Medical Jobs</li></a>
+            </ul>
+                <div class="clear"></div>
+        </header>
+            <div class="clear"></div>
+        <div class="wid_100">
+            <div style="float:left;margin-top:20px;margin-left:40px;"><span class="btn btn-info pointer" ng-click="goBack()"><i class="fa fa-backward"></i>&nbsp;&nbsp;Go Back</span></div>
+             <div class="center_Style1" style="float:left;width:50%;text-align:right;">Build Your Resume Today !!!</div>
+             <div style="float:right;margin-top:20px;margin-right:40px;"><span class="btn btn-success pointer" ng-click="newProject()"><i class="fa fa-plus-square"></i>&nbsp;&nbsp;New</span></div>
+                <div class="clear"></div>
+        </div>
+            <div class="clear"></div>
+        <div class="main">
+            <div class="sub_div">
+                 <form ng-submit="saveData()">
+                    <div class="wid_100">
+                        <div class="info_head">Your Personal Information</div>
+                            <div class="clear"></div>
+                        <div class="wid_100">
+                            <div class="wid_100_mar_20">
+                                <div class="div_left">
+                                    <label for="firstname">First Name:</label>
+                                    <input id="firstname" ng-model="firstname" name="firstname" type="text" placeholder="First Name (required)" class="input_field" ng-required="true">
+                                </div>
+                                <div class="div_right">
+                                    <label for="lastname">Last Name:</label>
+                                    <input id="lastname" name="lastname" ng-model="lastname" type="text" placeholder="Last Name" class="input_field" ng-required="true">
+                                </div>
+                                    <div class="clear"></div>
+                            </div>
+                                <div class="clear"></div>
+                            <div class="wid_100_mar_10">
+                                <div class="div_left">
+                                    <label for="emailaddress">Email:</label>
+                                    <input id="emailaddress" name="emailaddress" ng-model="emailaddress" type="email" placeholder="Email (required)" class="input_field" ng-required="true">
+                                </div>
+                                <div class="div_right">
+                                    <label for="phone">Telephone:</label>
+                                    <input id="phone" name="phone" type="tel" ng-model="phone" placeholder="(xxx) xxx-xxx" class="input_field" ng-required="true">
+                                </div>
+                                    <div class="clear"></div>
+                            </div>
+                                <div class="clear"></div>
+                            <div class="wid_100_mar_10">
+                                <div class="wid_100">
+                                    <label for="address1">Address 1:</label>
+                                    <input id="address1" name="address1" type="text" ng-model="address1" placeholder="Address Line 1 (required)" class="input_field" style="width:86.5%;" ng-required="true">
+                                </div>
+                            </div>
+                                <div class="clear"></div>
+                            <div class="wid_100_mar_10">
+                                <div class="wid_100">
+                                    <label for="address2">Address 2:</label>
+                                    <input id="address2" name="address2" type="text" ng-model="address2" placeholder="Address Line 2" class="input_field" style="width:86.5%;">
+                                </div>
+                            </div>
+                                <div class="clear"></div>
+                            <div class="wid_100_mar_10">
+                                <div class="div_left">
+                                    <label for="zipcode">Zipcode:</label>
+                                    <input id="zipcode" name="zipcode" type="text" ng-model="zipcode" placeholder="Zipcode" class="input_field" ng-required="true">
+                                </div>
+                                <div class="div_right">
+                                    <label for="city">City:</label>
+                                    <input id="city" name="city" type="text" ng-model="city" placeholder="City" class="input_field" ng-required="true">
+                                </div>
+                                    <div class="clear"></div>
+                            </div>
+                                <div class="clear"></div>
+                            <div class="wid_100_mar_10">
+                                <div class="div_left">
+                                    <label for="state">State:</label>
+                                    <input id="state" name="state" type="text" ng-model="state" class="input_field" placeholder="State" ng-required="true"/>
+                                </div>
+                                <div class="div_right">
+                                    <label for="country">Country:</label>
+                                    <input id="country" name="country" type="text" ng-model="country" list="countryList" class="input_field" placeholder="Country" ng-required="true"/>
+                                    <datalist id="countryList">
+                                        <option value="America">
+                                        <option value="Canada">
+                                        <option value="Germany">
+                                        <option value="Italy">
+                                        <option value="India">
+                                        <option value="Russia">
+                                        <option value="Japan">
+                                        <option value="China">
+                                    </datalist>
+                                </div>
+                                    <div class="clear"></div>
+                            </div>
+                                <div class="clear"></div>
+
+
+                            <!--input type="submit" name="save" value="Save"-->
+                         </div>
+                            <div class="clear ht_30"></div>
+                        <div class="info_head">Your Professional Summary</div>
+                            <div class="clear"></div>
+                        <div class="wid_100">
+                            <div class="wid_100_mar_20">
+                                <div class="wid_100">
+                                    <label for="summary">Summary:</label>
+                                    <textarea id="notes" placeholder="About You....." name="notes" spellcheck="true" ng-model="notes" maxLength="1000" class="input_field" style="width:86.5%;height:100px;"></textarea>
+                                </div>
+                            </div>
+                                <div class="clear"></div>
+                        </div>
+                            <div class="clear ht_30"></div>
+                        <div class="info_head">Your Educational Information</div>
+                            <div class="clear"></div>
+                        <div class="wid_100">
+                        <fieldset  ng-repeat="column in columns">
+                            <div class="wid_100_mar_20">
+                                <div class="div_left">
+                                    <div class="wid_100">
+                                        <label for="program">Program:</label>
+                                        <input id="program" name="program" type="text" list="programList" class="input_field" ng-model="column.program" placeholder="Program" ng-required="true"/>
+                                        <datalist id="programList">
+                                            <option value="Bachelors">
+                                            <option value="Certificate Program">
+                                            <option value="Diploma">
+                                            <option value="Masters">
+                                        </datalist>
+                                    </div>
+                                        <div class="clear"></div>
+                                    <div class="wid_100_mar_10">
+                                        <label for="course">Course:</label>
+                                        <input id="course" name="course" type="text" ng-model="column.course" placeholder="Course" class="input_field" ng-required="true">
+                                    </div>
+                                    <div class="wid_100_mar_10">
+                                        <label for="institute">Institute:</label>
+                                        <input id="institute" name="institute" ng-model="column.institute" type="text" class="input_field" placeholder="Institute" ng-required="true">
+                                    </div>
+                                </div>
+                                <div class="div_right">
+                                    <div class="wid_100">
+                                        <label for="startYear">Start Date:</label>
+                                        <input id="startYear" name="startYear" ng-model="column.startYear" type="date" placeholder="yyyy-mm-dd" class="input_field" ng-required="true">
+                                    </div> 
+                                        <div class="clear"></div>    
+                                    <div class="wid_100_mar_10">
+                                        <label for="endYear">End Date:</label>
+                                        <input id="endYear" name="endYear" type="date" ng-model="column.endYear" placeholder="yyyy-mm-dd" class="input_field" ng-required="true">
+                                    </div>
+                                        <div class="clear"></div>
+                                    <div class="wid_100_mar_10">
+                                        <span class="remove btn btn-danger pointer" style="float:right;" ng-click="removeColumn($index)"><i class="fa fa-times"></i>&nbsp;Remove</span>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="clear"></div>
+                        </fieldset>
+                                <div class="clear"></div>
+                             <span class="addfields btn btn-primary pointer" ng-click="addNewColumn()"><i class="fa fa-plus"></i>&nbsp;Add Column</span>
+                                <div class="clear"></div>
+                            <!--div class="msg">{{columns}}</div-->
+                            <!--input type="submit" name="save" value="Save"-->
+                         </div>
+
+                             <div class="clear ht_30"></div>
+                        <div class="info_head">Your Professional Information</div>
+                            <div class="clear"></div>
+                        <div class="wid_100">
+                        <fieldset  ng-repeat="prof in profs">
+                            <div class="wid_100_mar_20">
+                                <div class="wid_100">
+                                        <label for="company">Job Duties:</label>
+                                        <textarea id="duties" name="duties" spellcheck="true" ng-model="prof.duties" maxLength="2000" placeholder="Job Duties....." class="input_field" style="width:86.5%;height:100px;"></textarea>
+                                </div>
+                                    <div class="clear ht_10"></div>
+                                <div class="div_left">
+                                    <div class="wid_100">
+                                        <label for="designation">Designation:</label>
+                                        <input id="designation" name="designation" type="text" list="programList" class="input_field" ng-model="prof.designation" placeholder="Designation" ng-required="true"/>
+                                        <datalist id="programList">
+                                            <option value="Bachelors">
+                                            <option value="Certificate Program">
+                                            <option value="Diploma">
+                                            <option value="Masters">
+                                        </datalist>
+                                    </div>
+                                        <div class="clear"></div>
+                                    <div class="wid_100_mar_10"> 
+                                        <label for="field">Field:</label>
+                                        <input id="field" name="field" type="text" ng-model="prof.field" placeholder="Field" class="input_field" ng-required="true">
+                                    </div> 
+                                         <div class="clear"></div>
+                                    <div class="wid_100_mar_10"> 
+                                        <label for="company">Company Name:</label>
+                                        <input id="company" name="company" ng-model="prof.company" placeholder="Company" type="text" class="input_field" ng-required="true">
+                                    </div>
+                                </div>
+                                <div class="div_right">
+                                    <div class="wid_100">
+                                        <label for="c_startYear">Start Date:</label>
+                                        <input id="c_startYear" name="c_startYear" ng-model="prof.c_startYear" type="date" placeholder="yyyy-mm-dd" class="input_field" ng-required="true">
+                                    </div>
+                                        <div class="clear"></div>
+                                    <div class="wid_100_mar_10">
+                                        <label for="c_endYear">End Date:</label>
+                                        <input id="c_endYear" name="c_endYear" type="date" ng-model="prof.c_endYear" placeholder="yyyy-mm-dd" class="input_field" ng-required="true">
+                                    </div>
+                                        <div class="clear"></div>
+                                    <div class="wid_100_mar_10">
+                                        <span class="remove btn btn-danger pointer" style="float:right;" ng-click="removeColumnprof($index)"><i class="fa fa-times"></i>&nbsp;Remove</span>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="clear"></div>
+                        </fieldset>
+                                <div class="clear"></div>
+                             <span class="addfields btn btn-primary pointer" ng-click="addNewColumnprof()"><i class="fa fa-plus"></i>&nbsp;Add Column</span>
+                                <div class="clear"></div>
+                         </div>
+                            <div class="clear ht_30"></div>
+                        <div class="info_head">Your Skills</div>
+                            <div class="clear"></div>
+                        <div class="wid_100">
+                        <fieldset  ng-repeat="skill in skills">
+                            <div class="wid_100_mar_20">
+                                <div class="div_left">
+                                    <div class="wid_100">
+                                        <label for="skills">Skills:</label>
+                                        <input id="skills" name="skills" ng-model="skill.skills" placeholder="Skill" type="text" class="input_field" ng-required="true">
+                                    </div>
+                                        <div class="clear"></div>
+                                    <div class="wid_100_mar_10">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                
+                                <div class="div_right">
+                                    <div class="wid_100">
+                                        <label for="proficient">Proficient:</label>
+                                        <input id="proficient" name="proficient" ng-model="skill.proficient" type="range" min="0" max="10" step="1" style="width: 70%; height: 30px; float: right;" ng-required="true">
+                                    </div>
+                                        <div class="clear"></div>
+                                    <div class="wid_100_mar_10">
+                                        <span class="remove btn btn-danger pointer" style="float:right;" ng-click="removeColumnskill($index)"><i class="fa fa-times"></i>&nbsp;Remove</span>
+                                    </div>
+                                </div>
+                                    <div class="clear"></div>
+                            </div>
+                        </fieldset>
+                                <div class="clear"></div>
+                             <span class="addfields btn btn-primary pointer" ng-click="addNewColumnskill()"><i class="fa fa-plus"></i>&nbsp;Add Column</span>
+                                <div class="clear ht_30"></div>
+                            <!--div class="msg">{{columns}} <br/> {{profs}} <br/> {{skills}}</div-->
+                            <input type="submit" name="save" value="Save" class="btn btn-success">
+                            <span class="btn btn-warning pointer" ng-click="clearStorage()">Discard</span>
+                            <span class="btn btn-primary pointer" ng-click="viewWork()" style="float:right;"><i class="fa fa-eye"></i>&nbsp;&nbsp;View</span>
+                                <div class="clear"></div>
+                         </div>
+
+                            <div class="clear"></div>
+                    </div> 
+                </form>
+            </div>
+                <div class="clear"></div>
+        </div>
+            <div class="clear"></div>
+        <footer>
+            <h5>Boston University</h5>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

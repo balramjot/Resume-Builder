@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Term Project - Resume Builder</title>   
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/angular.js"></script>
+    <script src="js/main_controller.js"></script>
+    <script src="js/home.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body ng-controller="ResumeControler" ng-init=fetchiniData()>
+<div class="wrapper">
+    <div class="main_div">
+        <header>
+             <a href="./" style="color:#000;"><h1>Resume Builder</h1></a>
+            <ul>
+                <a href="job-search"><li class="ui-corner-all">Technical Jobs</li></a>
+                <a href="job-search-medical"><li class="ui-corner-all">Medical Jobs</li></a>
+            </ul>
+                <div class="clear"></div>
+        </header>
+            <div class="clear"></div>
+        <center class="center_Style1">Welcome to Resume Builder !!!</center>
+            <div class="clear"></div>
+        <div class="main">
+            <div class="sub_div">
+                <div class="wid_100_mar_20">
+                    <div class="div_left">
+                        <div class="wid_100">
+                            <center style="font-size:22px;padding-top:76px;">You are just one click away !!!</center>
+                                <div class="clear ht_30"></div>
+                            <center><span class="btn btn-warning pointer" style="padding:10px;font-size:18px;" ng-click="freshWork()"><i class="fa fa-file"></i>&nbsp;Build New Resume</span></center>
+                                <div class="clear ht_30"></div>
+                            <center id="hide_edit" style="display:none;"><a href="build-resume" class="btn btn-primary" style="padding:10px;font-size:18px;"><i class="fa fa-edit"></i>&nbsp;Continue With Existing Resume</a></center>
+                                <div class="clear" style="height:95px;"></div>
+                        </div>
+                    </div>
+                    <div class="div_right">
+                        <div class="wid_100">
+                            <img src="assets/write-a-resume.jpg" class="img_cls"/>
+                        </div>
+                    </div>
+                        <div class="clear"></div>
+                </div>
+            </div>
+                <div class="clear"></div>
+        </div>
+            <div class="clear"></div>
+        <footer>
+            <h5>Boston University</h5>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Term Project - Resume Builder</title>
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/angular.js"></script>
+    <script src="js/main_controller.js"></script>
+    <script src="js/view-resume.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+</head>
+<body ng-controller="ResumeControler" ng-init=getJobs()>
+<div class="wrapper">
+    <div class="main_div">
+        <header>
+            <a href="./" style="color:#000;"><h1>Resume Builder</h1></a>
+            <ul>
+                <a href="job-search"><li class="ui-corner-all">Technical Jobs</li></a>
+                <a href="job-search-medical"><li class="ui-corner-all">Medical Jobs</li></a>
+            </ul>
+                <div class="clear"></div>
+        </header>
+            <div class="clear"></div>
+        <div class="wid_100">
+            <div style="float:left;margin-top:20px;margin-left:40px;"><span class="btn btn-info pointer" ng-click="goBack()"><i class="fa fa-backward"></i>&nbsp;&nbsp;Go Back</span></div>
+             <div class="center_Style1" style="float:left;width:50%;text-align:right;">Take at look what you have made !!!</div>
+             <div style="float:right;margin-top:20px;margin-right:40px;"><span class="btn btn-success pointer" ng-click="clearStorage()"><i class="fa fa-plus-square"></i>&nbsp;&nbsp;New</span></div>
+                <div class="clear"></div>
+        </div>
+            <div class="clear"></div>
+        <div class="main">
+            <div class="sub_div">
+                    <div class="wid_100">
+                        <div class="col-md-12 div_01">
+                            <div class="wid_100" style="border:1px solid;padding:20px;"  id="widget">
+                                <b style="font-size:25px;">{{firstname}} {{lastname}}</b>
+                                    <div class="clear"></div>
+                                <b>{{address1}} {{address2}}, {{city}}, {{state}}, {{country}}, {{zipcode}} | (C) {{phone}}</b>
+                                    <div class="clear"></div>
+                                <b>{{emailaddress}}</b>
+                                <hr style="border: 2px solid #962b2b;margin:0;width:100%;"></hr>
+                                    <div class="clear ht_10"></div>
+                                <b style="font-size:22px;">Professional Summary</b>
+                                <hr style="border: 1px solid #962b2b;margin:0;width:100%;"></hr>
+                                <span>{{notes}}</span>
+                                    <div class="clear ht_10"></div>
+                                <b style="font-size:22px;">Experience</b>
+                                <hr style="border: 1px solid #962b2b;margin:0;width:100%;"></hr>
+                            <div ng-repeat="prof in profs">
+                                <b>{{prof.company}}</b>
+                                    <div class="clear"></div>
+                                <b style="float:left">{{prof.designation}} - {{prof.field}}</b>
+                                <b style="float:right">{{prof.c_startYear}} <span style="font-weight:normal;">to</span> {{prof.c_endYear}}</b>
+                                    <div class="clear"></div>
+                                <span>{{prof.duties}}</span>
+                                    <div class="clear ht_20"></div>
+                            </div>
+
+                               <div class="clear ht_10"></div>
+                                <b style="font-size:22px;">Education</b>
+                                <hr style="border: 1px solid #962b2b;margin:0;width:100%;"></hr>
+                            <div ng-repeat="column in columns">
+                                <b>{{column.institute}}</b>
+                                    <div class="clear"></div>
+                                <b style="float:left">{{column.program}} - {{column.course}}</b>
+                                <b style="float:right">{{column.startYear}} <span style="font-weight:normal;">to</span> {{column.endYear}}</b>
+                                    <div class="clear ht_10"></div>
+                            </div>
+                            <div class="clear ht_10"></div>
+                                <b style="font-size:22px;">Technical Skills</b>
+                                <hr style="border: 1px solid #962b2b;margin:0;width:100%;"></hr>
+                            <ul class="div_left" style="margin:0px;padding-left:16px;">
+                                <li ng-repeat="skill in skills">{{skill.skills}}</li>
+                            </ul>
+                            <div class="div_right" style="padding-top:20px;">
+                                <canvas id="testCanvas" width="400" height="200" style="float:left;"> </canvas>
+                                <div id="myLegend" style="float:right;"></div>
+                                    <div class="clear"></div>
+                            </div>
+                                <div class="clear"></div>
+                            </div>
+                        		<div class="clear"></div>
+                             <div class="btn btn-success" ng-click="view_pdf()">Save as Pdf</div>
+                             <span class="btn btn-warning pointer" ng-click="clearStorage()">Discard</span>
+                         </div>
+                            <div class="clear"></div>
+                    </div> 
+            </div>
+                <div class="clear"></div>
+        </div>
+            <div class="clear"></div>
+        <footer>
+            <h5>Boston University</h5>
+        </footer>
+    </div>
+</div>
+</body>
+</html>
